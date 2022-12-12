@@ -1,0 +1,19 @@
+<mxfile host="65bd71144e">
+    <diagram id="-g9q-lNKt8T3tQygzxb4" name="Page-1">
+        <mxGraphModel dx="1464" dy="547" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Twitter is a large application, so clarify what exacty the requriements are for this system&lt;br&gt;&lt;br&gt;Twitter features&lt;br&gt;tweet, CRUD&lt;br&gt;like posts&lt;br&gt;follow users&lt;br&gt;share posts&lt;br&gt;view a new feed&lt;br&gt;&lt;br&gt;&amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-150" y="35" width="480" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span&gt;Tweet - 140 characters, does it contain images or videos?&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-150" y="200" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Non-Functional requirements&lt;br&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-150" y="310" width="170" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

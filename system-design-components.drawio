@@ -1,0 +1,166 @@
+<mxfile host="65bd71144e">
+    <diagram id="uZvzDSCnJPvW7WdQIdQr" name="Page-1">
+        <mxGraphModel dx="3945" dy="2775" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="SQL" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="70" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="NoSQL" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="170" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Cache" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-80" y="280" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Load Balancer&lt;br&gt;Round Robin" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-60" y="420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="API Server" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="820" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="-80" y="520" width="160" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="12" vertex="1">
+                    <mxGeometry width="160" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="API Server" style="rounded=0;whiteSpace=wrap;html=1;" parent="12" vertex="1">
+                    <mxGeometry x="20" y="10" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="API Server" style="rounded=0;whiteSpace=wrap;html=1;" parent="12" vertex="1">
+                    <mxGeometry x="20" y="90" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="API Server" style="rounded=0;whiteSpace=wrap;html=1;" parent="12" vertex="1">
+                    <mxGeometry x="20" y="170" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;rotation=90;" parent="1" vertex="1">
+                    <mxGeometry x="-30" y="1140" width="30" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="PubSub" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-50" y="1185" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="CDN" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-80" y="1550" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Load Balancer&lt;br&gt;Consitent Hashing" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-230" y="420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="-140" y="-170" width="180" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="26" vertex="1">
+                    <mxGeometry width="180" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="&lt;br&gt;NoSQL&lt;br&gt;Leader" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="26" vertex="1">
+                    <mxGeometry x="20" y="10" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="&lt;br&gt;NoSQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="26" vertex="1">
+                    <mxGeometry x="100" y="10" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;br&gt;NoSQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="26" vertex="1">
+                    <mxGeometry x="20" y="80" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&lt;br&gt;NoSQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="26" vertex="1">
+                    <mxGeometry x="100" y="80" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="-140" y="-410" width="170" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="28" vertex="1">
+                    <mxGeometry width="170" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="&lt;br&gt;SQL&lt;br&gt;Leader" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="28" vertex="1">
+                    <mxGeometry x="20" y="11.333333333333332" width="60" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;br&gt;SQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="28" vertex="1">
+                    <mxGeometry x="100" y="11.333333333333332" width="60" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="&lt;br&gt;SQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="28" vertex="1">
+                    <mxGeometry x="20" y="90.66666666666666" width="60" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;br&gt;SQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="28" vertex="1">
+                    <mxGeometry x="100" y="90.66666666666666" width="60" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="-380" y="-170" width="180" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="29" vertex="1">
+                    <mxGeometry width="180" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="&lt;br&gt;NoSQL&lt;br&gt;Leader" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="29" vertex="1">
+                    <mxGeometry x="20" y="10" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="&lt;br&gt;NoSQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="29" vertex="1">
+                    <mxGeometry x="100" y="10" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="&lt;br&gt;NoSQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="29" vertex="1">
+                    <mxGeometry x="20" y="80" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="&lt;br&gt;NoSQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="29" vertex="1">
+                    <mxGeometry x="100" y="80" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="-380" y="-410" width="170" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="35" vertex="1">
+                    <mxGeometry width="170" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="&lt;br&gt;SQL&lt;br&gt;Leader" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="35" vertex="1">
+                    <mxGeometry x="20" y="11.333333333333332" width="60" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="&lt;br&gt;SQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="35" vertex="1">
+                    <mxGeometry x="100" y="11.333333333333332" width="60" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="&lt;br&gt;SQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="35" vertex="1">
+                    <mxGeometry x="20" y="90.66666666666666" width="60" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="&lt;br&gt;SQL&lt;br&gt;Follower" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="35" vertex="1">
+                    <mxGeometry x="100" y="90.66666666666666" width="60" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="DB Replication" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-325" y="-240" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="DB Replication" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-325" y="-20" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="DB Sharding" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-80" y="-20" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="DB Sharding" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-80" y="-240" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="&lt;h1&gt;DB Replication&lt;/h1&gt;&lt;p&gt;Replication is used to achieve&lt;br&gt;- Increased read scalability, you now have more servers to read from&lt;/p&gt;&lt;p&gt;- Increased availability, it if a read db goes down then there are other replica to still serve traffic&lt;/p&gt;&lt;p&gt;- Disaster support, if an entire datacenter goes down but you have replica else where you still have your data&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-710" y="-420" width="290" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="&lt;h1&gt;DB Sharding&lt;/h1&gt;&lt;p&gt;Replication is used to achieve&lt;br&gt;- Increased WRITE scalability, you have additional servers that are storing data&lt;/p&gt;&lt;p&gt;- Increased read performance as well but replication is better for this.&lt;/p&gt;&lt;p&gt;- Increased as the abililty to handle high level of concurrency&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-710" y="-190" width="290" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="&lt;h1&gt;Cache&lt;/h1&gt;&lt;p&gt;Caches are used to&lt;/p&gt;&lt;p&gt;- Minimize latency in order to read the data quicklly&lt;/p&gt;&lt;p&gt;- If using a database with ACID guaruntees it can help with fast access without sacrificing the benefits of this database&lt;/p&gt;&lt;p&gt;- when the applciation needs to support real-time data access and updates&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-530" y="150" width="290" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="&lt;h1&gt;Load Balancers&lt;/h1&gt;&lt;p&gt;Load Balancers are used to manage traffic across server replications.&amp;nbsp; You want to replicate servers so that you can handle increased concurrency and inrease performance, allowing your severs to split requests amongst themselves.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Consistent Hashing can be used to route traffic to databases based on a property.&amp;nbsp; Commonly userId is used when consitent hashing.&amp;nbsp; This will store all of a users data on a single sharded database.&amp;nbsp; This is beneficial when doing pagination on that users data.&amp;nbsp;&amp;nbsp;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-550" y="400" width="290" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="&lt;h1&gt;PubSub&lt;/h1&gt;&lt;p&gt;- When you want to implement real-time data processing and streaming&amp;nbsp; with high-throughput and low latency&lt;/p&gt;&lt;p&gt;- Improve scalability and resilience&lt;/p&gt;&lt;p&gt;- Create an event driven architecture where different component react to events in real-time&lt;/p&gt;&lt;p&gt;-Supporting the development of microservices, by providing a way for different services to communicate with each other&lt;/p&gt;&lt;p&gt;&lt;span&gt;-Durability: The ability to store messages reliably, so that they can be delivered even if a publisher or subscriber goes offline.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Flexibility: The ability to support a variety of messaging patterns and protocols, so that the broker can be used in a wide range of applications.&lt;/p&gt;&lt;p&gt;Security: The ability to provide secure communication between different services, including support for authentication, encryption, and access control.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-580" y="1010" width="290" height="430" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="&lt;h1&gt;CDN&lt;br&gt;&lt;/h1&gt;&lt;div&gt;- Use when you have a lot of static content and you want to serve it quickly at the edge to your users&lt;/div&gt;&lt;div&gt;- If you have high levels of traffic a CDN spreads your content to multiple servers and it spreads the load amongst the servers&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-580" y="1480" width="290" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="&lt;h1&gt;API Servers&lt;/h1&gt;&lt;div&gt;This is where you can create custom logic for your application&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-555" y="680" width="290" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="&lt;h1&gt;SQL DB&lt;/h1&gt;&lt;p&gt;- When your application requires the support for complex queries, with joins and subqueries.&lt;/p&gt;&lt;p&gt;- When your application needs to support ACID transactions&lt;/p&gt;&lt;p&gt;- Your data is well structured&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-1070" y="-410" width="290" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="&lt;h1&gt;NoSQL DB&lt;/h1&gt;&lt;p&gt;- If your data is unstructured or has a complex, heirachical structure.&lt;br&gt;&lt;/p&gt;&lt;p&gt;- when your applications needs to support horizontal scalability.&amp;nbsp; This allows you to add more servers more easily&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-1080" y="-170" width="290" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="&lt;h1&gt;Differences&lt;/h1&gt;&lt;div&gt;Both databases can be replicated and sharded however, NoSql database databases like Mongodb can contain multiple replica without explicitly sharding.&amp;nbsp; Sharding a SQL database requires careful planning and coordination in order to distribute the data across the shards to ensure consistency and performance.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-1410" y="-410" width="290" height="200" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

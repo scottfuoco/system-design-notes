@@ -1,0 +1,120 @@
+<mxfile host="65bd71144e">
+    <diagram id="CMv7QAz_QmGqdZHA5KE1" name="Page-1">
+        <mxGraphModel dx="1920" dy="1181" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="49" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1790" y="120" width="260" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classicThin;startFill=1;" edge="1" parent="1" source="42" target="49">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1790" y="-270" width="190" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="2070" y="-130" width="250" height="290" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="&lt;div&gt;&lt;span&gt;Tiny URL generator&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-30" y="-190" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Questions:&lt;br&gt;How many characters?&amp;nbsp; is it a fix length of characters?&amp;nbsp; This helps determine the total number of URLs we can generate&lt;br&gt;Do you need to be authenticated to create urls?&amp;nbsp; This is asked so that we know if two users make a tiny url for the same URL we dont want one user to be able&lt;br&gt;to delete their url and have it remove the other users.&lt;br&gt;Can users set expiry dates on the urls? if so how long? This is asked to determine how if we will run out of urls within a given time before urls expire&lt;br&gt;Are we building some analytics system when a user clicks the shortened url to track usage?&lt;br&gt;can users delete urls?&amp;nbsp; if they can't then we can share the same url for each&lt;br&gt;track ownership of the urls&lt;br&gt;can users specify their own url names?" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-30" y="-170" width="860" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Answers (for this example):&lt;br&gt;8 charcters per url&lt;br&gt;users cannot specify their own urls&lt;br&gt;users need to authenticate&lt;br&gt;users can delete&lt;br&gt;users can set their own expiry, up to 5 years, defaults to 1 year" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-20" y="5" width="350" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="NonFunctional Requirements&lt;br&gt;minimize latency - no one wants to use a link if it is slow&lt;br&gt;maximize availability - we want to make sure that the system is up as much as it can be&lt;br&gt;&lt;br&gt;&lt;br&gt;This system is going to be write heavy, clarify with the interviewer ie is it 1 write to approx 100 reads, etc&lt;br&gt;&lt;br&gt;Ask approximately how many users we are expecting per month?&amp;nbsp; Answer 1 billion&lt;br&gt;with 8 characters using numbers, upper, and lowercase characters that gives (10+26+26)^8 unique urls&lt;br&gt;this number is in the trillions so we have more than enough time for the URLs to last.&lt;br&gt;&lt;br&gt;calculate the throughput per second using 1 billion requests per month&lt;br&gt;&lt;br&gt;1,000,000,000 per month / 30 approx 33 Million per day divided by roughly 10000 seconds in a day&lt;br&gt;gives us about 300 to 400 WRITES per second&lt;br&gt;&lt;br&gt;this gives us 300 * 100( if we have 100 reads per write) per second, 30,000 reads per second is quite a lot.&amp;nbsp;&lt;br&gt;So it will be good to implement an in memory caching system.&lt;br&gt;&lt;br&gt;Rough estimate on how much data to store&lt;br&gt;&lt;br&gt;so we need to store the old url, the new url, maybe the userId, expiry date, and potentially some other metadata&lt;br&gt;&lt;br&gt;8 bytes for the new url key&lt;br&gt;140 bytes for the old url&lt;br&gt;4 bytes for date&lt;br&gt;8 bytes for expirartion date&lt;br&gt;8 bytes for a timestamp&lt;br&gt;user&lt;br&gt;other metadata&lt;br&gt;&lt;br&gt;over estimate at 1000 bytes ( big over estimation but it keeps the math simple)&lt;br&gt;&lt;br&gt;1 Billion writes a month @ 1000btyes = 1TB of data per month&lt;br&gt;over 10 years this will be 1 Petabyte&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-20" y="135" width="610" height="620" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Database considerations&lt;br&gt;&lt;div&gt;Why a NoSql database makes sense&lt;/div&gt;&lt;div&gt;- there are no complex relationships&lt;/div&gt;&lt;div&gt;- the system is read heavy and NoSql dbs scale for reads really well&lt;/div&gt;&lt;div&gt;- there is no need for acid compliance&lt;/div&gt;&lt;div&gt;- we have eventual consistency which is good enough in NoSql&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="670" y="-5" width="380" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Cache Size&lt;br&gt;200GB 20% of 1TB&lt;br&gt;Probably better to use an LRU cache over LFU cache&lt;br&gt;this is because if you have a viral url that is no longer used then it will&lt;br&gt;sit stale in the cache for a while&lt;br&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="140" width="380" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="HTTP&amp;nbsp;&lt;br&gt;301 - a resource has permanently moved&lt;br&gt;302 - a resource has temporarily moved&lt;br&gt;&lt;br&gt;Both of these are telling the browser to redirect to the &quot;moved&quot; url&lt;br&gt;however a&amp;nbsp;301 will tell the browser to cache the tiny url as the large url&lt;br&gt;so that it doesn't have to hit tinyurl again it knows to go directly to your large&amp;nbsp;&lt;br&gt;url." style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="290" width="420" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=none;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="9" target="32">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1650" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="1380" y="-25" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" target="12">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1880" y="-10" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="Server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1820" y="-85" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="NoSql&lt;br&gt;DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="1970" y="140" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Cache" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1520" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Approaches to creating the urls&lt;br&gt;&lt;br&gt;#1 Have a service that tries to has the users input or generate a random hash and see if it is available in the data base&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;&#9;&lt;/span&gt;This would/could have a lot of cache collisions depending on the hashing algorithm used.&amp;nbsp; So it could take a number of&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;&#9;&lt;/span&gt;tries before returning a hash to the user.&lt;br&gt;&lt;br&gt;#2 We could pre-generate all, or a portion of the possible keys we have for the 62^8 options and store them in a KV database&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;&#9;&lt;/span&gt;This would let us fetch available keys from the KV database and return them so they can be stored in our nosql database&amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1050" y="-350" width="690" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="SQL db&lt;br&gt;for ACID" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="2160" y="60" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;entryX=0.388;entryY=0.009;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="18" target="17">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="URL Generator" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+                    <mxGeometry x="2140" y="-85" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=none;startFill=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="22" target="49">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2000" y="220" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=none;startFill=0;" edge="1" parent="1" source="22" target="17">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=none;startFill=0;" edge="1" parent="1" source="22" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Periodic Cleanup&amp;nbsp;&lt;br&gt;service (10min)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1920" y="340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;" edge="1" parent="1" source="32" target="42">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="Load Balancer&lt;br&gt;Simple round robin" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1540" y="-130" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="42">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2140" y="-60" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="Server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1820" y="-160" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="Server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1820" y="-240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="NoSql&lt;br&gt;DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="1890" y="140" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="NoSql&lt;br&gt;DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="1810" y="140" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="Consistent Hashing on userId, so that if a user has a profile section we can grab all their ids from the same shard" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="1925" y="40" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="Text" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1480" y="340" width="40" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
